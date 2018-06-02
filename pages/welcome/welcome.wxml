@@ -1,0 +1,8 @@
+<!--pages/welcome/welcome.wxml-->
+<view class='contrainer'>
+<image src='/images/avatar/avatar-1.png' class = "avatar"></image>
+<text class='motto'>hello,{{userName}}</text>
+<view class='content-contrainer' catchtap='onTapJump'>
+<text class='content'>开启小程序之旅</text>
+</view>
+</view>

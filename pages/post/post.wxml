@@ -1,0 +1,20 @@
+<!--pages/post/post.wxml-->
+<import src="post-item/post-item-tpl.wxml"/>
+<view>
+  <swiper indicator-dots='{{true}}' autoplay='{{true}}' interval='{{5000}}'>
+    <swiper-item>
+      <image src='/images/post/post-1@text.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/post/post-2@text.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/post/post-3@text.jpg'></image>
+    </swiper-item>
+  </swiper>
+  <!--post内容-->
+  <block wx:for="{{postList}}">
+<template is="postItemTpl" data="{{item}}"/>
+  </block>
+
+</view>
