@@ -2,7 +2,7 @@
   <view class='post-contrainer'>
     <view class='post-author-date'>
       <image src='{{item.avatar}}'></image>
-      <text class='post-date'>{{item.object.date}}</text>
+      <text class='post-date'>{{item.date}}</text>
     </view>
     <text class='post-title'>{{item.title}}</text>
     <image class='post-image' src='{{item.postImg}}' mode='aspectFill'></image>

@@ -1,6 +1,5 @@
-// pages/post/post.js
-var dataObj = require("../../data/data.js");
-
+// pages/detail/detail.js
+var dataObj = require('../../data/data.js');
 Page({
 
   /**
@@ -14,16 +13,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      postList:dataObj.postList
-    });
-    wx.setStorage({
-      key: 'postList',
-      data: dataObj.postList,
-      success:function(res){
-        console.log("setStorage is success!")
-      }
-    })
+   // console.log(options.id);
+   var postId = options.id;
+    var post = dataObj.postList[postId];
+  this.setData({
+    postId:options.id,
+    post: dataObj.postList[postId],
+  })
+  wx.setNavigationBarTitle({
+    title: post.title,
+  })
   },
 
   /**
@@ -44,28 +43,28 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  console.log("post page is onHide!")
+  
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  console.log("post page is onUnload!")
+  
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  console.log("用户下拉");
+  
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log("用户触底");
+  
   },
 
   /**
@@ -73,17 +72,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  onTapDetailPage:function(event){
-    wx.showToast({
-      title: '哈哈哈',
-      icon:'success',
-      mask:true
-    })
-    var postId= event.currentTarget.dataset.postId;
-//wx.navigateTo({
- // url: '../detail/detail?id='+postId,
-//})
   }
 })
